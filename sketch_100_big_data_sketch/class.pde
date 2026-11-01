@@ -15,37 +15,24 @@ class data {
     speed = time;
     this.emotion=emotion;
     this.edutainment = edutainment;
-    radius = 100;
+    radius = 50;
     this.day = day;
-  }// contructor method - where assignment of values are!
+  }// contructor method - where assignment of values are above!
 
 
-  //what you want to make
 
-  //
 
-  // own method to make for the class
-  // void amethod(){
-  // method about what u want ur processing thing to do?? move,twerk etc
-  //}
-
-  void draw() {    // change draw
-    for (int i =0; i<100; i=i+1)
-      if (istrue == true) {
-
-        pushMatrix();
-        translate(width/2, height/2);
-        rotate(radians(r));
-        circle(xPos, yPos, 2);
-        r = r+21.5;
-
-        popMatrix();
-        pushMatrix();
-        translate(width/2, height/2);
-        circle(0, 0, 20);
-        popMatrix();
+  void draw() {
+    for (int row= 0; row<10; row=row+1) {
+      for (int col=0; col<10; col=col+1) {
+        float rectW = width/10;
+        float rectH = height/10;
+        rect(row*rectW+20, col*rectH+20, 50, 90);
+        circle(row*rectW+50/2, col*rectH+20+90/2, 20);  // make the circle rotate in the circle and let it bleed let the fill colour be the emotion! :)
       }
+    }
   }
-
- 
-}
+  // colour change method for the visulisaton
+  void colourChanges() {
+  }// where the colour change of each is change and will be called in the draw ;)
+}//coulorChanges()
