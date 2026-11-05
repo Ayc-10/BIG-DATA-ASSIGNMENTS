@@ -15,24 +15,53 @@ class data {
     speed = time;
     this.emotion=emotion;
     this.edutainment = edutainment;
-    radius = 50;
+    radius = 20;
     this.day = day;
   }// contructor method - where assignment of values are above!
 
-
-
-
   void draw() {
-    for (int row= 0; row<10; row=row+1) {
-      for (int col=0; col<10; col=col+1) {
-        float rectW = width/10;
-        float rectH = height/10;
-        rect(row*rectW+20, col*rectH+20, 50, 90);
-        circle(row*rectW+50/2, col*rectH+20+90/2, 20);  // make the circle rotate in the circle and let it bleed let the fill colour be the emotion! :)
-      }
+    {
+      fill(124,124,124,123);
+      stroke(0, 0, 255);
+      strokeWeight(3.0);
+      rect(xPos, yPos, 60, 90);
+      pushMatrix(); // store the transformation
+      float centreW = xPos+25;
+      float centreH = yPos+40;
+      translate(centreW, centreH);
+      rotate(radians(r));
+      colourforCirle();
+      rect(0,0,20,10);
+      circle(0, speed, radius);
+      popMatrix(); // saves the transformation and reverts the coordinate system to normal
+      r = r+5;
     }
   }
-  // colour change method for the visulisaton
-  void colourChanges() {
-  }// where the colour change of each is change and will be called in the draw ;)
-}//coulorChanges()
+
+
+
+
+
+
+
+
+  //colours the circle in the centre !
+  void colourforCirle() {
+    if (this.emotion== 1) {
+      noStroke();
+      fill(255, 16, 78, 128);
+    } else if (this.emotion==2) {
+      noStroke();
+      fill(125, 0, 0, 128);
+    } else if (this.emotion==3) {
+      noStroke();
+      fill(236, 145, 255, 128);
+    } else if (this.emotion==4) {
+      noStroke();
+      fill(91, 249, 255, 128);
+    } else if (this.emotion==5) {
+      noStroke();
+      fill(255, 244, 124);
+    }
+  }
+}
