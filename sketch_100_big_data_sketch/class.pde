@@ -21,20 +21,25 @@ class data {
 
   void draw() {
     {
-      fill(124,124,124,123);
-      stroke(0, 0, 255);
-      strokeWeight(3.0);
-      rect(xPos, yPos, 60, 90);
-      pushMatrix(); // store the transformation
-      float centreW = xPos+25;
-      float centreH = yPos+40;
-      translate(centreW, centreH);
-      rotate(radians(r));
-      colourforCirle();
-      rect(0,0,20,10);
-      circle(0, speed, radius);
-      popMatrix(); // saves the transformation and reverts the coordinate system to normal
-      r = r+5;
+      if (istrue == true) {
+        fill(0);       
+        rect(xPos, yPos, 60, 90);
+        float tempx = xPos +20;
+        float tempy= yPos +90;
+        rect(tempx,tempy,25,10);
+        pushMatrix(); // store the transformation
+        float centreW = xPos+25;
+        float centreH = yPos+40;
+        translate(centreW, centreH);
+        rotate(radians(r));
+        colourforCirle();
+        noStroke();
+        rect(0, 0, speed/2, 20);
+        edutainmentsChecker();
+        circle(0, speed, radius);
+        popMatrix(); // saves the transformation and reverts the coordinate system to normal
+        r = r+5;
+      }
     }
   }
 
@@ -45,7 +50,7 @@ class data {
 
 
 
-  //colours the circle in the centre !
+  //colours the circle in the centre ! //circle in the centre represent the emotion!!
   void colourforCirle() {
     if (this.emotion== 1) {
       noStroke();
@@ -62,6 +67,46 @@ class data {
     } else if (this.emotion==5) {
       noStroke();
       fill(255, 244, 124);
+    } else {
+      noStroke();
+      fill(124,124,124);
     }
   }
+  
+  void deviceColours(){ // colours each rectangle to platform colours and others as another colour!
+    String platforms = this.platform;
+    if (platforms.equals("Twitch")){
+    stroke(145, 70, 255);
+    strokeWeight(2.6);}
+    else if(platforms.equals("Youtube")||platforms.equals("Netflix")){
+    stroke(255,174,201);
+    strokeWeight(2.6);}
+    else{
+    stroke(173, 235, 179);
+    }
+    }
+  
+  void edutainmentsChecker(){ // customises the device where it is education or entertainment!!
+   String edu = this.edutainment;
+   if (edu.equals("Education")){
+     strokeWeight(3);
+     stroke(82,207,240);
+   }
+   else if(edu.equals("Entertainment")){
+     strokeWeight(3);
+     stroke(125,40,127);
+   }  }
 }
+  
+  
+  
+  
+    
+    
+    
+
+  
+  
+  
+  
+  
