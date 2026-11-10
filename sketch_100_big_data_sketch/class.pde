@@ -15,14 +15,14 @@ class data {
     speed = time;
     this.emotion=emotion;
     this.edutainment = edutainment;
-    radius = 20;
+    radius = 25;
     this.day = day;
   }// contructor method - where assignment of values are above!
 
   void draw() {
     {
       if (istrue == true) {
-        fill(0);       
+        fill(0);
         rect(xPos, yPos, 60, 90);
         float tempx = xPos +20;
         float tempy= yPos +90;
@@ -38,7 +38,7 @@ class data {
         edutainmentsChecker();
         circle(0, speed, radius);
         popMatrix(); // saves the transformation and reverts the coordinate system to normal
-        r = r+5;
+        r = r+5;  
       }
     }
   }

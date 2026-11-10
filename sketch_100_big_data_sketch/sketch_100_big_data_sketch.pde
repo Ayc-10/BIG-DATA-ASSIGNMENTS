@@ -1,7 +1,7 @@
 ArrayList<data> visual = new ArrayList<data>();
-import processing.sound.*;
-SoundFile windTurbine;
-//Copyright information about the sound:
+import processing.sound.*;// accessing the libary for sounds
+SoundFile helicopterBlades;
+//Copyright information about the sound:not required using a sound from pixabi which allows sounds to be used,restributed without credit legally.
 String [] streamData ;
 boolean istrue = false;
 float r;
@@ -9,14 +9,11 @@ float x;
 float y;
 float radius;
 
-// remove after u do the class stuff
-int counterLivestreaming = 0; // live streaming services
-int counterOther = 0 ; // streaming services
 
 void setup() {
   size(1000, 1000);
   background(255);
-  windTurbine = new SoundFile(this,"");// sound is saved to the variable called windTurbine
+  helicopterBlades = new SoundFile(this, "helicopter.mp3");// sound is saved to the variable called windTurbine
   streamData = loadStrings("big data 100(Sheet1).csv");//saving the file to streamData variable
 
   for (int i = 1; i<streamData.length; i= i+1) {
@@ -26,25 +23,15 @@ void setup() {
     int emotion = int(splitData[4]);
     int day = int(splitData[0]);
     String edutainment = splitData[5];
-    x = random(0,width-50); y= random(0,height-60);
+    x = random(0, width-50);
+    y= random(0, height-60);
     data d = new data(x, y, platform, time, emotion, edutainment, day);
     visual.add(d);
     //Adding creating each object and adding to the list visual to be accessed later
-
-
-
-
-    //printArray(splitData);
-
-    // but this in the class section
-    if (platform.equals("Twitch")) { // can use this to colour all platform to purple etc??
-      counterLivestreaming = counterLivestreaming+1;     //check how many of that is in the platform array is equal to twitch if so then it is counted!!
-      //println(counterLivestreaming);
-    } else {
-      counterOther = 100 - counterLivestreaming; // the streaming services
-    }
   }
 }
+
+
 
 
 
@@ -56,5 +43,11 @@ void draw() {
 }
 
 void mousePressed() {
-istrue = !istrue;
+  istrue = !istrue;
+  if (istrue== true) {
+    helicopterBlades.play();
+    //loop() to loop
+  } else {
+    helicopterBlades.pause();
+  }
 }
