@@ -96,11 +96,13 @@ class data {
      strokeWeight(3);
      stroke(125,40,127);
    }  }
-}
+   
+
   
   
   
   
+  }
     
     
     
