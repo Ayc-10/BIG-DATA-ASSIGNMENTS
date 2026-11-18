@@ -4,7 +4,6 @@ SoundFile helicopterBlades;
 //Copyright information about the sound:not required using a sound from pixabi which allows sounds to be used,restributed without credit legally.
 String [] streamData ;
 boolean istrue = false;
-boolean keyPressedtester=false;
 float r;
 float x;
 float y;
@@ -53,6 +52,4 @@ void mousePressed() {
   }
 }
 
-//void keyPressed(){
-//  keyPressedtester=!keyPressedtester;  
-//}
+
