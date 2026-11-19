@@ -26,7 +26,7 @@ class data {
         rect(xPos, yPos, 60, 90);
         float tempx = xPos +20;
         float tempy= yPos +90;
-        rect(tempx,tempy,25,10);
+        rect(tempx, tempy, 25, 10);
         pushMatrix(); // store the transformation
         float centreW = xPos+25;
         float centreH = yPos+40;
@@ -36,14 +36,12 @@ class data {
         noStroke();
         rect(0, 0, speed/2, 20);
         edutainmentsChecker();
-        circle(0, speed, radius);
+        circle(0, speed, radius); // speed increases the x values and it varies if speed is high then it speeds faster!
         popMatrix(); // saves the transformation and reverts the coordinate system to normal
-        r = r+5;  
+        r = r+5;
       }
     }
   }
-
-
 
 
 
@@ -69,46 +67,36 @@ class data {
       fill(255, 244, 124);
     } else {
       noStroke();
-      fill(124,124,124);
+      fill(124, 124, 124);
     }
   }
-  
-  void deviceColours(){ // colours each rectangle to platform colours and others as another colour!
+
+  void deviceColours() { // colours each rectangle to platform colours and others as another colour!
     String platforms = this.platform;
-    if (platforms.equals("Twitch")){
-    stroke(145, 70, 255);
-    strokeWeight(2.6);}
-    else if(platforms.equals("Youtube")||platforms.equals("Netflix")){
-    stroke(255,174,201);
-    strokeWeight(2.6);}
-    else{
-    stroke(173, 235, 179);
+    if (platforms.equals("Twitch")) {
+      stroke(145, 70, 255);
+      strokeWeight(2.6);
+    } else if (platforms.equals("Youtube")||platforms.equals("Netflix")) {
+      stroke(255, 174, 201);
+      strokeWeight(2.6);
+    } else {
+      stroke(173, 235, 179);
     }
+  }
+
+  void edutainmentsChecker() { // customises the device where it is education or entertainment!!
+    String edu = this.edutainment;
+    if (edu.equals("Education")) {
+      strokeWeight(3);
+      stroke(82, 207, 240);
+    } else if (edu.equals("Entertainment")) {
+      strokeWeight(3);
+      stroke(125, 40, 127);
     }
-  
-  void edutainmentsChecker(){ // customises the device where it is education or entertainment!!
-   String edu = this.edutainment;
-   if (edu.equals("Education")){
-     strokeWeight(3);
-     stroke(82,207,240);
-   }
-   else if(edu.equals("Entertainment")){
-     strokeWeight(3);
-     stroke(125,40,127);
-   }  }
+  }
    
 
-  
-  
-  
-  
-  }
-    
-    
-    
+ 
 
   
-  
-  
-  
-  
+}
