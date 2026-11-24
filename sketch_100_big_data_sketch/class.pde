@@ -18,8 +18,9 @@ class data {
     radius = 25;
     this.day = day;
   }// contructor method - where assignment of values are above!
+// method of the screens that is drawed!
 
-  void draw() {
+  void screens() {
     {
       if (istrue == true) {
         fill(0);
@@ -30,13 +31,13 @@ class data {
         pushMatrix(); // store the transformation
         float centreW = xPos+25;
         float centreH = yPos+40;
-        translate(centreW, centreH);
-        rotate(radians(r));
-        colourforCirle();
-        noStroke();
-        rect(0, 0, speed/2, 20);
-        edutainmentsChecker();
-        circle(0, speed, radius); // speed increases the x values and it varies if speed is high then it speeds faster!
+        translate(centreW, centreH); //Changes the coordinate system
+        rotate(radians(r)); // rotate is a function that takes the input of a radian it rotates the radian
+        colourforCirle(); //colours the circle based on emotion
+        noStroke();// u know
+        rect(0, 0, speed/2, 20); // draw the rectangle with specific coordinates
+        edutainmentsChecker(); //Adds a stroke around the circles
+        circle(0, speed, radius); // speed increases the x values and it varies if speed is high then it speeds faster!  // speed used the time i use the platform for so faster spinning means more time spent watch that platform!
         popMatrix(); // saves the transformation and reverts the coordinate system to normal
         r = r+5;
       }
@@ -88,15 +89,40 @@ class data {
     String edu = this.edutainment;
     if (edu.equals("Education")) {
       strokeWeight(3);
-      stroke(82, 207, 240);
+      stroke(0, 150, 255); //Light blue colour
     } else if (edu.equals("Entertainment")) {
       strokeWeight(3);
-      stroke(125, 40, 127);
+      stroke(255, 105, 180); //hot pink
     }
   }
    
 
- 
+ void dayControls(){                    //method that generate more numbers then others depending on the day they watch the certain platform
+ int days =this.day;
+ if (days==1){
+    xPos+=random(-1,2);
+    yPos+=random(-2,3);}
+ else if(days==2){
+    xPos+=random(-6,6);
+    yPos+=random(-9,9);
+ }
+ else if(days==3){
+ xPos+=random(-10,10);
+ yPos+=random(-14,16);}
+ else if(days==4){
+ xPos+=random(-15,15);
+ yPos+=random(-20,21);}
+ else if(days==5){
+ xPos+=random(-20,20);
+ yPos+=random(-28,28);}
+ else if(days==6){
+ xPos+=random(-25,25);
+ yPos+=random(-35,36);
+ }
+ else if(days==7){
+ xPos+=random(-30,40);
+ yPos+=random(-45,46);} 
+ }
 
   
 }

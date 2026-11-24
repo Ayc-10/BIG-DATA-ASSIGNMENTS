@@ -3,7 +3,9 @@ Data is about:
 
 This Sketch does require interactions, All you have to do is left click with mouse to see the sketch.
 Left click again to pause.
-
+Before doing the interactions below i advise you do the one above:
+press lower case m to see something;
+press uppercase M to clear
 
 
 GITHUB =https://github.com/Ayc-10/BIG-DATA-ASSIGNMENTS
