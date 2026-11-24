@@ -49,6 +49,7 @@ void draw() {
     
   }
   if (key =='m'){
+    background(255);
     for(data d:visual){
       d.screens();
       //moves the x and y postion of the rectangle!
